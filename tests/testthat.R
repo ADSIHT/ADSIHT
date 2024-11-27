@@ -1,4 +1,4 @@
 library(testthat)
-library(rtemplate)
+library(ADSIHT)
 
-test_check("rtemplate")
+test_check("ADSIHT")
