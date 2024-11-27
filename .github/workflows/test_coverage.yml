@@ -3,7 +3,6 @@ name: test_coverage
 on:
   push:
     branches:
-      - main
       - dev
 
 jobs:
