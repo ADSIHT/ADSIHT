@@ -19,8 +19,12 @@
 #' in information criterion. Default: \code{ic.scale = 3}.
 #' @param ic.coef A non-negative value used for multiplying the penalty term
 #' for choosing the optimal stopping time. Default: \code{ic.coef = 3}.
+#' @param coef1 A positive value to control the sub-optimal stopping time.
+#' @param coef2 A positive value to control the overall stopping time. A small value leads to larger search range.
 #' @param eta A parameter controls the step size in the gradient descent step.
 #' Default: \code{eta = 0.8}.
+#' @param max_iter A paramter that controls the maximum number of line search, ignored if \code{OLS} is employed.
+#' @param method Whether \code{ols} (default) or \code{linesearch} method should be employed.
 #'
 #' @return A \code{list} object comprising:
 #' \item{beta}{A \eqn{p}-by-\code{length(s0)} matrix of coefficients, stored in column format.}
@@ -29,7 +33,7 @@
 #' \item{A_out}{The selected variables given threshold value in \code{lambda}.}
 #' \item{ic}{The values of the specified criterion for each fitted model given threshold \code{lamdba}.}
 #'
-#' @author Yanhang Zhang, Zhifan Li, Jianxin Yin.
+#' @author Yanhang Zhang, Zhifan Li, Shixiang Liu, Jianxin Yin.
 #'
 #' @export
 #'
@@ -56,7 +60,7 @@ ADSIHT <- function(x, y, group,
                   coef2 = 1,
                   eta = 0.8,
                   max_iter = 20,
-                  method = "stepsize")
+                  method = "ols")
 {
   if(missing(group)) group <- 1:ncol(x)
   p <- ncol(x)
