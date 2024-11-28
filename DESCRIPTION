@@ -8,7 +8,7 @@ Authors@R: c(
   )
 Author: Yanhang Zhang [aut, cre]
 Maintainer: Yanhang Zhang <zhangyh98@ruc.edu.cn>
-Description: An efficient toolkit for solving the high-dimensinal double sparse linear regression via iterative hard threshlding algrithm.
+Description: An efficient toolkit for solving the high-dimensinal double sparse linear regression via iterative hard threshlding algrithm. For more details, please see <https://arxiv.org/pdf/2305.04182>.
 License: GPL (>= 3) | file LICENSE
 Encoding: UTF-8
 LazyData: true
