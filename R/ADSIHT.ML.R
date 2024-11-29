@@ -1,11 +1,10 @@
-#' @title Adaptive Double Sparse Iterative Hard Thresholding Algorithm (ADSIHT)
+#' @title ADSIHT in multi-task learning framework
 #'
 #' @description An implementation of the sparse group selection in linear regression model via ADSIHT.
 #'
-#' @param x Input matrix, of dimension \eqn{n \times p}; each row is an observation
-#' vector and each column is a predictor.
-#' @param y The response variable of \code{n} observations.
-#' @param group A vector indicating which group each variable belongs to
+#' @param x_list The list of input matrix.
+#' @param y_list The list of response variable.
+#' @param group_list A vector indicating which group each variable belongs to
 #' For variables in the same group, they should be located in adjacent columns of \code{x}
 #' and their corresponding index in \code{group} should be the same.
 #' Denote the first group as \code{1}, the second \code{2}, etc.
@@ -19,8 +18,13 @@
 #' in information criterion. Default: \code{ic.scale = 3}.
 #' @param ic.coef A non-negative value used for multiplying the penalty term
 #' for choosing the optimal stopping time. Default: \code{ic.coef = 3}.
+#' @param coef1 A positive value to control the sub-optimal stopping time.
+#' @param coef2 A positive value to control the overall stopping time. A small value leads to larger search range.
 #' @param eta A parameter controls the step size in the gradient descent step.
 #' Default: \code{eta = 0.8}.
+#' @param max_iter A paramter that controls the maximum number of line search, ignored if \code{OLS} is employed.
+#' @param method Whether \code{ols} (default) or \code{linesearch} method should be employed.
+#'
 #'
 #' @return A \code{list} object comprising:
 #' \item{beta}{A \eqn{p}-by-\code{length(s0)} matrix of coefficients, stored in column format.}
@@ -29,20 +33,29 @@
 #' \item{A_out}{The selected variables given threshold value in \code{lambda}.}
 #' \item{ic}{The values of the specified criterion for each fitted model given threshold \code{lamdba}.}
 #'
-#' @author Yanhang Zhang, Zhifan Li, Jianxin Yin.
+#' @author Yanhang Zhang, Zhifan Li, Shixiang Liu, Jianxin Yin.
 #'
 #' @export
 #'
 #' @examples
 #'
+#'set.seed(1)
 #' n <- 200
-#' m <- 100
-#' d <- 10
+#' p <- 100
+#' K <- 4
 #' s <- 5
-#' s0 <- 5
-#' data <- gen.data(n, m, d, s, s0)
-#' fit <- ADSIHT(data$x, data$y, data$group)
-#' fit$A_out[which.min(fit$ic)]
+#' s0 <- 2
+#' x_list <- lapply(1:k, function(x) matrix(rnorm(n*p, 0, 1), nrow = n))
+#'vec <- rep(0, K * p)
+#'non_sparse_groups <- sample(1:p, size = s, replace = FALSE)
+#'for (group in non_sparse_groups) {
+#'  group_indices <- seq(group, K * p, by = p)
+#'  non_zero_indices <- sample(group_indices, size = s0, replace = FALSE)
+#'  vec[non_zero_indices] <- rep(2, s0)
+#'}
+#' y_list <- lapply(1:K, function(i) return(y = X_list[[i]] %*% vex[((i-1)*p+1):(i*p)]+rnorm(n, 0, 0.5)))
+#' fit <- ADSIHT.ML(data$x, data$y, data$group)
+#' fit$A_out[, which.min(fit$ic)]
 
 ADSIHT.ML <- function(x_list, y_list, group_list,
                       s0,
@@ -56,7 +69,7 @@ ADSIHT.ML <- function(x_list, y_list, group_list,
                       coef2 = 1,
                       eta = 0.8,
                       max_iter = 20,
-                      method = "stepsize")
+                      method = "ols")
 {
   if (length(x_list) != length(y_list)) stop("The length of x_list should be the same with y_list")
   K <- length(x_list)
@@ -97,8 +110,8 @@ ADSIHT.ML <- function(x_list, y_list, group_list,
   }
   res <- DSIHT_ML_Cpp(x_new, y_new, weight = weight, sequence = s0, ic_type = ic_type, ic_scale = ic.scale, kappa = kappa, g_index = index, ic_coef = ic.coef, coef1 = coef1, coef2 = coef2, eta = eta, max_iter = max_iter, method = method, nor = FALSE)
   beta <- apply(res$beta[inverse_order, ], 2, function(x) {
-          temp <- rep(unlist(y_norm), each = p)
-          x/unlist(x_norm)*temp
+    temp <- rep(unlist(y_norm), each = p)
+    x/unlist(x_norm)*temp
   })
   intercept <- unlist(y_mean) - sapply(1:K, function(i) {
     ind <- (1+(i-1)*p):(i*p)
