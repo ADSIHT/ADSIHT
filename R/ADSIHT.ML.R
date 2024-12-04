@@ -35,6 +35,10 @@
 #'
 #' @author Yanhang Zhang, Zhifan Li, Shixiang Liu, Jianxin Yin.
 #'
+#' @import Rcpp
+#'
+#' @useDynLib ADSIHT, .registration=TRUE
+#'
 #' @export
 #'
 #' @examples
@@ -45,7 +49,7 @@
 #' K <- 4
 #' s <- 5
 #' s0 <- 2
-#' x_list <- lapply(1:k, function(x) matrix(rnorm(n*p, 0, 1), nrow = n))
+#' x_list <- lapply(1:K, function(x) matrix(rnorm(n*p, 0, 1), nrow = n))
 #'vec <- rep(0, K * p)
 #'non_sparse_groups <- sample(1:p, size = s, replace = FALSE)
 #'for (group in non_sparse_groups) {

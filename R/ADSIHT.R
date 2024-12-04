@@ -35,6 +35,8 @@
 #'
 #' @author Yanhang Zhang, Zhifan Li, Shixiang Liu, Jianxin Yin.
 #'
+#' @import Rcpp
+#'
 #' @useDynLib ADSIHT, .registration=TRUE
 #'
 #' @export
