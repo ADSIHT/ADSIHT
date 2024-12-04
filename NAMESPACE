@@ -3,3 +3,4 @@
 export(ADSIHT)
 export(ADSIHT.ML)
 export(gen.data)
+useDynLib(ADSIHT, .registration=TRUE)

@@ -35,6 +35,8 @@
 #'
 #' @author Yanhang Zhang, Zhifan Li, Shixiang Liu, Jianxin Yin.
 #'
+#' @useDynLib ADSIHT, .registration=TRUE
+#'
 #' @export
 #'
 #' @examples
