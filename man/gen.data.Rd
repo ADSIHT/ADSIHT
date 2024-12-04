@@ -29,6 +29,15 @@ gen.data(
 
 \item{s0}{The number of important variables in each important group.}
 
+\item{cor.type}{The structure of correlation.
+\code{cor.type = 1} denotes the independence structure,
+where the covariance matrix has \eqn{(i,j)} entry equals \eqn{I(i \neq j)}.
+\code{cor.type = 2} denotes the exponential structure,
+where the covariance matrix has \eqn{(i,j)} entry equals \eqn{rho^{|i-j|}}.
+\code{cor.type = 3} denotes the constant structure,
+where the non-diagnoal entries of covariance
+matrix are \eqn{rho} and diagonal entries are 1.}
+
 \item{beta.type}{The structure of coefficients.
 \code{beta.type = 1} denotes the homogenous setup,
 where each entry has the same magnitude.

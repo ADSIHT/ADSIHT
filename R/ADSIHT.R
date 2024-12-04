@@ -28,16 +28,12 @@
 #'
 #' @return A \code{list} object comprising:
 #' \item{beta}{A \eqn{p}-by-\code{length(s0)} matrix of coefficients, stored in column format.}
-#' \item{intercept}{A \code{length(s0) vector of intercepts}.
-#' \item{lambda}{A \code{length(s0) vector of threshold values}
+#' \item{intercept}{A \code{length(s0)} vector of intercepts}.
+#' \item{lambda}{A \code{length(s0)} vector of threshold values}
 #' \item{A_out}{The selected variables given threshold value in \code{lambda}.}
 #' \item{ic}{The values of the specified criterion for each fitted model given threshold \code{lamdba}.}
 #'
 #' @author Yanhang Zhang, Zhifan Li, Shixiang Liu, Jianxin Yin.
-#'
-#' @import Rcpp
-#'
-#' @useDynLib ADSIHT, .registration=TRUE
 #'
 #' @export
 #'

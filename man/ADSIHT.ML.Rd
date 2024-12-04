@@ -55,11 +55,14 @@ for choosing the optimal stopping time. Default: \code{ic.coef = 3}.}
 Default: \code{eta = 0.8}.}
 
 \item{max_iter}{A paramter that controls the maximum number of line search, ignored if \code{OLS} is employed.}
-
-\item{method}{Whether \code{ols} (default) or \code{linesearch} method should be employed.}
 }
 \value{
-
+A \code{list} object comprising:
+\item{beta}{A \eqn{p}-by-\code{length(s0)} matrix of coefficients, stored in column format.}
+\item{intercept}{A \code{length(s0)} vector of intercepts}.
+\item{lambda}{A \code{length(s0)} vector of threshold values}
+\item{A_out}{The selected variables given threshold value in \code{lambda}.}
+\item{ic}{The values of the specified criterion for each fitted model given threshold \code{lamdba}.}
 }
 \description{
 An implementation of the sparse group selection in linear regression model via ADSIHT.
@@ -72,7 +75,7 @@ p <- 100
 K <- 4
 s <- 5
 s0 <- 2
-x_list <- lapply(1:k, function(x) matrix(rnorm(n*p, 0, 1), nrow = n))
+x_list <- lapply(1:K, function(x) matrix(rnorm(n*p, 0, 1), nrow = n))
 vec <- rep(0, K * p)
 non_sparse_groups <- sample(1:p, size = s, replace = FALSE)
 for (group in non_sparse_groups) {
@@ -80,8 +83,8 @@ for (group in non_sparse_groups) {
  non_zero_indices <- sample(group_indices, size = s0, replace = FALSE)
  vec[non_zero_indices] <- rep(2, s0)
 }
-y_list <- lapply(1:K, function(i) return(y = X_list[[i]] \%*\% vex[((i-1)*p+1):(i*p)]+rnorm(n, 0, 0.5)))
-fit <- ADSIHT.ML(data$x, data$y, data$group)
+y_list <- lapply(1:K, function(i) return(y = x_list[[i]] \%*\% vec[((i-1)*p+1):(i*p)]+rnorm(n, 0, 0.5)))
+fit <- ADSIHT.ML(x_list, y_list, ?)
 fit$A_out[, which.min(fit$ic)]
 }
 \author{

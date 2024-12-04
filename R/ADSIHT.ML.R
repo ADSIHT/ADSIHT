@@ -23,21 +23,15 @@
 #' @param eta A parameter controls the step size in the gradient descent step.
 #' Default: \code{eta = 0.8}.
 #' @param max_iter A paramter that controls the maximum number of line search, ignored if \code{OLS} is employed.
-#' @param method Whether \code{ols} (default) or \code{linesearch} method should be employed.
-#'
 #'
 #' @return A \code{list} object comprising:
 #' \item{beta}{A \eqn{p}-by-\code{length(s0)} matrix of coefficients, stored in column format.}
-#' \item{intercept}{A \code{length(s0) vector of intercepts}.
-#' \item{lambda}{A \code{length(s0) vector of threshold values}
+#' \item{intercept}{A \code{length(s0)} vector of intercepts}.
+#' \item{lambda}{A \code{length(s0)} vector of threshold values}
 #' \item{A_out}{The selected variables given threshold value in \code{lambda}.}
 #' \item{ic}{The values of the specified criterion for each fitted model given threshold \code{lamdba}.}
 #'
 #' @author Yanhang Zhang, Zhifan Li, Shixiang Liu, Jianxin Yin.
-#'
-#' @import Rcpp
-#'
-#' @useDynLib ADSIHT, .registration=TRUE
 #'
 #' @export
 #'
@@ -57,8 +51,8 @@
 #'  non_zero_indices <- sample(group_indices, size = s0, replace = FALSE)
 #'  vec[non_zero_indices] <- rep(2, s0)
 #'}
-#' y_list <- lapply(1:K, function(i) return(y = X_list[[i]] %*% vex[((i-1)*p+1):(i*p)]+rnorm(n, 0, 0.5)))
-#' fit <- ADSIHT.ML(data$x, data$y, data$group)
+#' y_list <- lapply(1:K, function(i) return(y = x_list[[i]] %*% vec[((i-1)*p+1):(i*p)]+rnorm(n, 0, 0.5)))
+#' fit <- ADSIHT.ML(x_list, y_list, ?)
 #' fit$A_out[, which.min(fit$ic)]
 
 ADSIHT.ML <- function(x_list, y_list, group_list,

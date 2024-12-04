@@ -16,7 +16,7 @@
 #' where the covariance matrix has \eqn{(i,j)} entry equals \eqn{rho^{|i-j|}}.
 #' \code{cor.type = 3} denotes the constant structure,
 #' where the non-diagnoal entries of covariance
-#' matrix are \eqn{rho} and diagonal entries are 1.\
+#' matrix are \eqn{rho} and diagonal entries are 1.
 #' @param beta.type The structure of coefficients.
 #' \code{beta.type = 1} denotes the homogenous setup,
 #' where each entry has the same magnitude.
