@@ -6,7 +6,7 @@ In our paper, we show that our algorithm achieves the minimax optimality with fa
 Installation of the `ADSIHT` package can be done directly from github:
 ```
 install.packages("remotes")
-remotes::install_github("Yanhang129/ADSIHT")
+remotes::install_github("ADSIHT/ADSIHT")
 ```
 
 ## References
