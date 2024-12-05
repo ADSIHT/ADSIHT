@@ -10,7 +10,7 @@ Authors@R: c(
   person(given = "Shixiang", family = "Liu", email = "liushixiang_stat@ruc.edu.cn", role = c("aut")),
   person(given = "Lingren", family = "Kong", email = "lingrenkong@ruc.edu.cn", role = c("aut"))
   )
-Description: An efficient toolkit for solving the high-dimensional double sparse linear regression via iterative hard thresholding algorithm. For more details, please see <arXiv:2305.04182>.
+Description: An efficient toolkit for solving the high-dimensional double sparse linear regression via iterative hard thresholding algorithm. For more details, please see <DOI:10.48550/arXiv.2305.04182.
 License: GPL (>= 3) | file LICENSE
 Encoding: UTF-8
 LazyData: true
@@ -25,4 +25,3 @@ Suggests:
     testthat,
     knitr,
     rmarkdown
-VignetteBuilder: knitr
