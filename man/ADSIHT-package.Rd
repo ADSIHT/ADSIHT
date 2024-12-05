@@ -12,6 +12,9 @@ An efficient toolkit for solving the high-dimensinal double sparse linear regres
 
 Authors:
 \itemize{
+  \item Zhifan Li \email{zhifanli@bimsa.cn}
+  \item Jianxin Yin \email{jyin@ruc.edu.cn}
+  \item Shixiang Liu \email{liushixiang_stat@ruc.edu.cn}
   \item Lingren Kong \email{lingrenkong@ruc.edu.cn}
 }
 
