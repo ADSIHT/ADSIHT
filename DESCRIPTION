@@ -5,9 +5,8 @@ Version: 0.1.0
 Date: 2023-03-22
 Authors@R: c(
   person(given = "Yanhang", family = "Zhang", email = "zhangyh98@ruc.edu.cn", role = c("aut")),
-  person(given = "Lingren", family = "Kong", email = "lingrenkong@ruc.edu.cn", role = c("cre"))
+  person(given = "Lingren", family = "Kong", email = "lingrenkong@ruc.edu.cn", role = c("aut","cre"))
   )
-Maintainer: Lingren Kong <lingrenkong@ruc.edu.cn>
 Description: An efficient toolkit for solving the high-dimensinal double sparse linear regression via iterative hard threshlding algrithm. For more details, please see <https://arxiv.org/pdf/2305.04182>.
 License: GPL (>= 3) | file LICENSE
 Encoding: UTF-8
@@ -19,7 +18,6 @@ LinkingTo:
     Rcpp,
     RcppEigen,
 RoxygenNote: 7.3.2
-SystemRequirements: C++11
 Suggests: 
     testthat,
     knitr,
