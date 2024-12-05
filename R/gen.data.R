@@ -36,6 +36,8 @@
 #'
 #' @author Yanhang Zhang, Zhifan Li, Jianxin Yin.
 #'
+#' @importFrom stats rbinom rnorm
+#'
 #' @export
 #'
 #' @examples
