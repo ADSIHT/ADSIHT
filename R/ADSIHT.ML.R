@@ -24,7 +24,7 @@
 #' @param coef2 A positive value to control the overall stopping time. A small value leads to larger search range.
 #' @param eta A parameter controls the step size in the gradient descent step.
 #' Default: \code{eta = 0.8}.
-#' @param max_iter A paramter that controls the maximum number of line search, ignored if \code{OLS} is employed.
+#' @param max_iter A parameter that controls the maximum number of line search, ignored if \code{OLS} is employed.
 #' @param method Whether \code{ols} (default) or \code{linesearch} method should be employed.
 #'
 #' @return A \code{list} object comprising:

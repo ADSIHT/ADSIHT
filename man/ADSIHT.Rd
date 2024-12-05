@@ -59,7 +59,7 @@ for choosing the optimal stopping time. Default: \code{ic.coef = 3}.}
 \item{eta}{A parameter controls the step size in the gradient descent step.
 Default: \code{eta = 0.8}.}
 
-\item{max_iter}{A paramter that controls the maximum number of line search, ignored if \code{OLS} is employed.}
+\item{max_iter}{A parameter that controls the maximum number of line search, ignored if \code{OLS} is employed.}
 
 \item{method}{Whether \code{ols} (default) or \code{linesearch} method should be employed.}
 }

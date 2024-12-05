@@ -15,7 +15,7 @@
 #' \code{cor.type = 2} denotes the exponential structure,
 #' where the covariance matrix has \eqn{(i,j)} entry equals \eqn{rho^{|i-j|}}.
 #' \code{cor.type = 3} denotes the constant structure,
-#' where the non-diagnoal entries of covariance
+#' where the non-diagonal entries of covariance
 #' matrix are \eqn{rho} and diagonal entries are 1.
 #' @param beta.type The structure of coefficients.
 #' \code{beta.type = 1} denotes the homogenous setup,
