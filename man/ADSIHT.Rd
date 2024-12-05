@@ -48,6 +48,10 @@ in information criterion. Default: \code{ic.scale = 3}.}
 \item{ic.coef}{A non-negative value used for multiplying the penalty term
 for choosing the optimal stopping time. Default: \code{ic.coef = 3}.}
 
+\item{L}{The length of the sequence of s0. Default: \code{L = 5}.}
+
+\item{weight}{The weight of the samples, with the default value set to 1 for each sample.}
+
 \item{coef1}{A positive value to control the sub-optimal stopping time.}
 
 \item{coef2}{A positive value to control the overall stopping time. A small value leads to larger search range.}

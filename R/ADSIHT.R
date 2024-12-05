@@ -19,6 +19,8 @@
 #' in information criterion. Default: \code{ic.scale = 3}.
 #' @param ic.coef A non-negative value used for multiplying the penalty term
 #' for choosing the optimal stopping time. Default: \code{ic.coef = 3}.
+#' @param L The length of the sequence of s0. Default: \code{L = 5}.
+#' @param weight The weight of the samples, with the default value set to 1 for each sample.
 #' @param coef1 A positive value to control the sub-optimal stopping time.
 #' @param coef2 A positive value to control the overall stopping time. A small value leads to larger search range.
 #' @param eta A parameter controls the step size in the gradient descent step.

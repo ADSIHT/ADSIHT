@@ -18,11 +18,14 @@
 #' in information criterion. Default: \code{ic.scale = 3}.
 #' @param ic.coef A non-negative value used for multiplying the penalty term
 #' for choosing the optimal stopping time. Default: \code{ic.coef = 3}.
+#' @param L The length of the sequence of s0. Default: \code{L = 5}.
+#' @param weight The weight of the samples, with the default value set to 1 for each sample.
 #' @param coef1 A positive value to control the sub-optimal stopping time.
 #' @param coef2 A positive value to control the overall stopping time. A small value leads to larger search range.
 #' @param eta A parameter controls the step size in the gradient descent step.
 #' Default: \code{eta = 0.8}.
 #' @param max_iter A paramter that controls the maximum number of line search, ignored if \code{OLS} is employed.
+#' @param method Whether \code{ols} (default) or \code{linesearch} method should be employed.
 #'
 #' @return A \code{list} object comprising:
 #' \item{beta}{A \eqn{p}-by-\code{length(s0)} matrix of coefficients, stored in column format.}

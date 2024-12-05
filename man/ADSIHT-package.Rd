@@ -2,8 +2,8 @@
 % Please edit documentation in R/ADSIHT-package.R
 \docType{package}
 \name{ADSIHT-package}
-\alias{ADSIHT}
 \alias{ADSIHT-package}
+\alias{_PACKAGE}
 \title{ADSIHT: Adaptive Double Sparse Iterative Hard Thresholding}
 \description{
 An efficient toolkit for solving the high-dimensinal double sparse linear regression via iterative hard threshlding algrithm. For more details, please see \url{https://arxiv.org/pdf/2305.04182}.
