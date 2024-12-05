@@ -2,7 +2,7 @@ Package: ADSIHT
 Type: Package
 Title: Adaptive Double Sparse Iterative Hard Thresholding
 Version: 0.1.0
-Date: 2023-03-22
+Date: 2024-12-5
 Authors@R: c(
   person(given = "Yanhang", family = "Zhang", email = "zhangyh98@ruc.edu.cn", role = c("aut","cre")),
   person(given = "Zhifan", family = "Li", email = "zhifanli@bimsa.cn", role = c("aut")),
@@ -10,7 +10,7 @@ Authors@R: c(
   person(given = "Shixiang", family = "Liu", email = "liushixiang_stat@ruc.edu.cn", role = c("aut")),
   person(given = "Lingren", family = "Kong", email = "lingrenkong@ruc.edu.cn", role = c("aut"))
   )
-Description: An efficient toolkit for solving the high-dimensional double sparse linear regression via iterative hard thresholding algorithm. For more details, please see <https://arxiv.org/pdf/2305.04182>.
+Description: An efficient toolkit for solving the high-dimensional double sparse linear regression via iterative hard thresholding algorithm. For more details, please see <arXiv:2305.04182>.
 License: GPL (>= 3) | file LICENSE
 Encoding: UTF-8
 LazyData: true
