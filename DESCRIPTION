@@ -1,28 +1,32 @@
-Package: ADSIHT
 Type: Package
+Package: ADSIHT
 Title: Adaptive Double Sparse Iterative Hard Thresholding
 Version: 0.1.0
 Date: 2024-12-5
 Authors@R: c(
-  person(given = "Yanhang", family = "Zhang", email = "zhangyh98@ruc.edu.cn", role = c("aut","cre")),
-  person(given = "Zhifan", family = "Li", email = "zhifanli@bimsa.cn", role = c("aut")),
-  person(given = "Jianxin", family = "Yin", email = "jyin@ruc.edu.cn", role = c("aut")),
-  person(given = "Shixiang", family = "Liu", email = "liushixiang_stat@ruc.edu.cn", role = c("aut")),
-  person(given = "Lingren", family = "Kong", email = "lingrenkong@ruc.edu.cn", role = c("aut"))
+    person("Yanhang", "Zhang", , "zhangyh98@ruc.edu.cn", role = c("aut", "cre")),
+    person("Zhifan", "Li", , "zhifanli@bimsa.cn", role = "aut"),
+    person("Jianxin", "Yin", , "jyin@ruc.edu.cn", role = "aut"),
+    person("Shixiang", "Liu", , "liushixiang_stat@ruc.edu.cn", role = "aut"),
+    person("Lingren", "Kong", , "lingrenkong@ruc.edu.cn", role = "aut")
   )
-Language: en-GB
-Description: An efficient toolkit for solving the high-dimensional double sparse linear regression via iterative hard thresholding algorithm. For more details, please see <DOI:10.48550/arXiv.2305.04182.
+Description: An efficient toolkit for solving the high-dimensional double
+    sparse linear regression via iterative hard thresholding algorithm.
+    For more details, please see <DOI:10.48550/arXiv.2305.04182.
 License: GPL (>= 3) | file LICENSE
-Encoding: UTF-8
-LazyData: true
-Depends: R (>= 4.1.0)
+Depends: 
+    R (>= 4.1.0)
 Imports: 
-    Rcpp, mvnfast, Matrix
+    Matrix,
+    mvnfast,
+    Rcpp
+Suggests: 
+    knitr,
+    rmarkdown,
+    testthat
 LinkingTo: 
     Rcpp,
-    RcppEigen,
+    RcppEigen
+Encoding: UTF-8
+Language: en-GB
 RoxygenNote: 7.3.2
-Suggests: 
-    testthat,
-    knitr,
-    rmarkdown
