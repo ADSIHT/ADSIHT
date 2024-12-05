@@ -50,7 +50,9 @@
 #'  non_zero_indices <- sample(group_indices, size = s0, replace = FALSE)
 #'  vec[non_zero_indices] <- rep(2, s0)
 #'}
-#' y_list <- lapply(1:K, function(i) return(y = x_list[[i]] %*% vec[((i-1)*p+1):(i*p)]+rnorm(n, 0, 0.5)))
+#' y_list <- lapply(1:K, function(i) return(
+#'   y = x_list[[i]] %*% vec[((i-1)*p+1):(i*p)]+rnorm(n, 0, 0.5))
+#' )
 #' fit <- ADSIHT.ML(x_list, y_list)
 #' fit$A_out[, which.min(fit$ic)]
 
