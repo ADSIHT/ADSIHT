@@ -10,7 +10,7 @@ Authors@R: c(
     person("Shixiang", "Liu", , "liushixiang_stat@ruc.edu.cn", role = "aut"),
     person("Lingren", "Kong", , "lingrenkong@ruc.edu.cn", role = "aut")
   )
-Description: An efficient toolkit for solving the high-dimensional double
+Description: Solving the high-dimensional double
     sparse linear regression via iterative hard thresholding algorithm.
     For more details, please see <DOI:10.48550/arXiv.2305.04182>.
 License: GPL (>= 3) | file LICENSE
