@@ -10,9 +10,8 @@ Authors@R: c(
     person("Shixiang", "Liu", , "liushixiang_stat@ruc.edu.cn", role = "aut"),
     person("Lingren", "Kong", , "lingrenkong@ruc.edu.cn", role = "aut")
   )
-Description: Solving the high-dimensional double
-    sparse linear regression via iterative hard thresholding algorithm.
-    For more details, please see Zhang et al. (2024, <DOI:10.48550/arXiv.2305.04182>).
+Maintainer: Yanhang Zhang <zhangyh98@ruc.edu.cn>
+Description: Solving the high-dimensional double sparse linear regression via iterative hard thresholding algorithm. For more details, please see Zhang et al. (2024, <DOI:10.48550/arXiv.2305.04182>).
 License: GPL (>= 3) | file LICENSE
 Depends: 
     R (>= 4.1.0)
