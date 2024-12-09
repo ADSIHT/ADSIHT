@@ -12,7 +12,7 @@ Authors@R: c(
   )
 Description: Solving the high-dimensional double
     sparse linear regression via iterative hard thresholding algorithm.
-    For more details, please see Zhang et. al (2024, <DOI:10.48550/arXiv.2305.04182>).
+    For more details, please see Zhang et al. (2024, <DOI:10.48550/arXiv.2305.04182>).
 License: GPL (>= 3) | file LICENSE
 Depends: 
     R (>= 4.1.0)
